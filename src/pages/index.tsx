@@ -1,9 +1,10 @@
 import { GetStaticPropsResult, NextPage } from 'next';
 import React from 'react';
-import ArticleList from '../components/ArticleList';
-import Header from '../components/Header';
+import ArticleList from '../components/article-list/ArticleList';
+import Header from '../components/header/Header';
 import { Article } from '../model/article';
 import { getArticlesByUser } from '../services/articles';
+import { Container } from '../styles/pages/Index';
 
 interface MyPropsInterface {
   articles: Article[];
@@ -23,15 +24,9 @@ const Index: NextPage<MyPropsInterface> = ({ articles }) => {
   return (
     <>
       <Header />
-      <div className="container">
+      <Container>
         <ArticleList articles={articles} />
-      </div>
-
-      <style jsx>{`
-        .container {
-          padding: 0 5vw;
-        }
-      `}</style>
+      </Container>
     </>
   );
 };
