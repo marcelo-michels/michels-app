@@ -6,7 +6,16 @@ interface MyPropsInterface {
 }
 
 const ArticleCard: React.FC<MyPropsInterface> = ({ article }) => {
-  return <LinkCard href={article.link}>{article.title}</LinkCard>;
+  return (
+    <LinkCard href={article.link}>
+      {article.title}
+      <div className="tags">
+        {article.tags.map(tag => (
+          <span className="tag">#{tag}</span>
+        ))}
+      </div>
+    </LinkCard>
+  );
 };
 
 export default ArticleCard;
