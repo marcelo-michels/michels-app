@@ -11,7 +11,9 @@ const ArticleCard: React.FC<MyPropsInterface> = ({ article }) => {
       {article.title}
       <div className="tags">
         {article.tags.map(tag => (
-          <span className="tag">#{tag}</span>
+          <span key={tag} className="tag">
+            #{tag}
+          </span>
         ))}
       </div>
     </LinkCard>
