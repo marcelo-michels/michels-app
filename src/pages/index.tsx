@@ -1,6 +1,6 @@
 import { GetStaticPropsResult, NextPage } from 'next';
-import React from 'react';
 import ArticleList from '../components/article-list/ArticleList';
+import Footer from '../components/footer/Footer';
 import Header from '../components/header/Header';
 import { Article } from '../model/article';
 import { getArticlesByUser } from '../services/articles';
@@ -27,6 +27,7 @@ const Index: NextPage<MyPropsInterface> = ({ articles }) => {
       <Container>
         <ArticleList articles={articles} />
       </Container>
+      <Footer />
     </>
   );
 };
